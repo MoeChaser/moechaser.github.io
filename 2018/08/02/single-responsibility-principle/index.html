@@ -108,20 +108,29 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="MoeChaser&#39;s Blog">
-<meta property="og:url" content="https://moechaser.github.io/index.html">
+  <meta name="description" content="定义应该有且仅有一个原因引起类的变更（There should never be more than one reason for a class to change.） 解释只有一个原因引起变化，也就是一个接口或类只有一个职责，它只负责一件事情。 举例以电话为例，电话通话包括三个过程：拨号、通话、挂断。写一个接口如下图：  这个接口比较简单，大部分人也会认为没有问题。但实际上，这个接口不只有一个">
+<meta name="keywords" content="Design Pattern">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单一职责原则">
+<meta property="og:url" content="https://moechaser.github.io/2018/08/02/single-responsibility-principle/index.html">
 <meta property="og:site_name" content="MoeChaser&#39;s Blog">
+<meta property="og:description" content="定义应该有且仅有一个原因引起类的变更（There should never be more than one reason for a class to change.） 解释只有一个原因引起变化，也就是一个接口或类只有一个职责，它只负责一件事情。 举例以电话为例，电话通话包括三个过程：拨号、通话、挂断。写一个接口如下图：  这个接口比较简单，大部分人也会认为没有问题。但实际上，这个接口不只有一个">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://moechaser.github.io/2018/08/02/single-responsibility-principle/phone-class-diagram1.png">
+<meta property="og:image" content="https://moechaser.github.io/2018/08/02/single-responsibility-principle/phone-class-diagram2.png">
+<meta property="og:image" content="https://moechaser.github.io/2018/08/02/single-responsibility-principle/phone-class-diagram3.png">
+<meta property="og:updated_time" content="2018-08-02T15:59:44.021Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MoeChaser&#39;s Blog">
+<meta name="twitter:title" content="单一职责原则">
+<meta name="twitter:description" content="定义应该有且仅有一个原因引起类的变更（There should never be more than one reason for a class to change.） 解释只有一个原因引起变化，也就是一个接口或类只有一个职责，它只负责一件事情。 举例以电话为例，电话通话包括三个过程：拨号、通话、挂断。写一个接口如下图：  这个接口比较简单，大部分人也会认为没有问题。但实际上，这个接口不只有一个">
+<meta name="twitter:image" content="https://moechaser.github.io/2018/08/02/single-responsibility-principle/phone-class-diagram1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://moechaser.github.io/"/>
+  <link rel="canonical" href="https://moechaser.github.io/2018/08/02/single-responsibility-principle/"/>
 
 
 
@@ -131,7 +140,7 @@
   };
 </script>
 
-  <title>MoeChaser's Blog</title>
+  <title>单一职责原则 | MoeChaser's Blog</title>
   
 
 
@@ -178,8 +187,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,7 +228,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
@@ -288,9 +296,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -322,11 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/02/single-responsibility-principle/" itemprop="url">
-                  单一职责原则
-                </a>
+          <h1 class="post-title" itemprop="name headline">单一职责原则
               
             
           </h1>
@@ -414,9 +418,7 @@
       
 
       
-        
-          
-            <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>应该有且仅有一个原因引起类的变更（There should never be more than one reason for a class to change.）</p>
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>应该有且仅有一个原因引起类的变更（There should never be more than one reason for a class to change.）</p>
 <h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>只有一个原因引起变化，也就是一个接口或类只有一个职责，它只负责一件事情。</p>
 <h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>以电话为例，电话通话包括三个过程：拨号、通话、挂断。写一个接口如下图：</p>
 <img src="/2018/08/02/single-responsibility-principle/phone-class-diagram1.png">
@@ -438,8 +440,6 @@
 <li>接口一定要做到单一职责，类的设计尽量做到只有一个原因引起变化。</li>
 </ul>
 
-          
-        
       
     </div>
 
@@ -457,14 +457,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Design-Pattern/" rel="tag"># Design Pattern</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -474,14 +480,19 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -502,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -578,6 +598,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释"><span class="nav-number">2.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举例"><span class="nav-number">3.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">4.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">5.</span> <span class="nav-text">思考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -705,6 +741,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
