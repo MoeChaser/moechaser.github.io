@@ -421,11 +421,11 @@
             <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>应该有且仅有一个原因引起类的变更（There should never be more than one reason for a class to change.）</p>
 <h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>只有一个原因引起变化，也就是一个接口或类只有一个职责，它只负责一件事情。</p>
 <h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>以电话为例，电话通话包括三个过程：拨号、通话、挂断。写一个接口如下图：</p>
-<img src="/2018/08/02/single-responsibility-principle/phone-class-diagram1.png">
+<img src="/Technology/Design-Pattern/2018/08/02/single-responsibility-principle/phone-class-diagram1.png">
 <p>这个接口比较简单，大部分人也会认为没有问题。但实际上，这个接口不只有一个职责，实际上包含了两个职责：一个是协议管理，负责通信过程的连接和断开，即dial()和hangup()方法；另一个是数据传送，在通话过程中传输双方的对话，即chat()。协议管理的变化（例如更换运营商）会引起这个接口或实现类的变化，数据传送的变化（例如除了传输语音数据外，也可以传输网络数据）也会引起这个接口或实现类的变化。因此这里有两个原因引起了类的变化。<br>我们考虑将这个接口拆分成两个接口，如下图所示：</p>
-<img src="/2018/08/02/single-responsibility-principle/phone-class-diagram2.png">
+<img src="/Technology/Design-Pattern/2018/08/02/single-responsibility-principle/phone-class-diagram2.png">
 <p>这个类图满足了单一职责原则的要求，每个接口职责分明。但是电话类需要把ConnectionManager和DataTransfer组合在一起才能使用，组合是一种强耦合关系，同时类的数量也增加了，实际上增加了设计的复杂性。因此我们修改类的设计如下图：</p>
-<img src="/2018/08/02/single-responsibility-principle/phone-class-diagram3.png">
+<img src="/Technology/Design-Pattern/2018/08/02/single-responsibility-principle/phone-class-diagram3.png">
 <p>实现类实现了两个接口，在面向接口编程的原则下，接口的设计满足了单一职责原则，一个接口修改对其他的接口无影响，这对系统的扩展性、维护性都有非常大的帮助。</p>
 <h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
 <li>类的复杂性降低，实现什么职责都有清晰明确的定义；</li>
@@ -536,8 +536,6 @@
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
                     
-                    
-                      
                     
                       
                     
