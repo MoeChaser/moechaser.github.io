@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://moechaser.github.io/"/>
-  <updated>2018-08-27T16:11:33.114Z</updated>
+  <updated>2018-09-05T15:24:57.013Z</updated>
   <id>https://moechaser.github.io/</id>
   
   <author>
@@ -15,6 +15,82 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开闭原则</title>
+    <link href="https://moechaser.github.io/Technology/Design-Pattern/2018/09/05/open-closed-principle/"/>
+    <id>https://moechaser.github.io/Technology/Design-Pattern/2018/09/05/open-closed-principle/</id>
+    <published>2018-09-05T14:45:42.000Z</published>
+    <updated>2018-09-05T15:24:57.013Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>一个软件实体如类、模块和函数应该对扩展开放，对修改关闭。（Software entities like classes,modules and functions should be open for extension but closed for modifications.）</p><h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>软件实体应该通过扩展来实现变化，而不是通过修改已有的代码来实现变化。<br>一个软件产品只要在生命期内，都会发生变化，我们应该在设计时尽量适应这些变化，以提高项目的稳定性和灵活性。开闭原则告诉我们应尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来完成变化，它是为软件实体的未来事件而制定的对现行开发设计进行约束的一个原则。<br>开闭原则对扩展开放，对修改关闭，并不意味着不做任何修改。低层模块的变更，必然要有高层模块进行适配，否则就是一个孤立无意义的代码片段。</p><a id="more"></a><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>开闭原则是最基础的一个原则，其他前五个原则是指导设计的具体工具和方法。</p><ol><li>开闭原则对测试的影响<br>修改已有代码往往也意味着修改对应的测试用例，如果不熟悉用例，修改可能会产生错误。通过扩展新增的代码，可以不修改已有测试用例，只通过新增用例覆盖扩展代码即可。</li><li>开闭原则可以提高复用性</li><li>开闭原则可以提高可维护性<br>维护人员通过扩展完善功能或者修复问题，不要在原有代码上进行修改。修改不仅需要理解原有代码的逻辑，修改过程中也可能引入新的问题。</li><li>面向对象开发的要求<br>把事物抽象成对象，对对象进行操作。在设计之初考虑到可能变化的因素，然后设计接口。</li></ol><h2 id="如何使用开闭原则"><a href="#如何使用开闭原则" class="headerlink" title="如何使用开闭原则"></a>如何使用开闭原则</h2><ol><li>抽象约束<ul><li>通过接口或抽象类约束扩展，对扩展进行边界限定，不允许出现在接口或抽象类中不存在的public方法；</li><li>参数类型、引用对象尽量使用接口或者抽象类，而不是实现类；</li><li>抽象层尽量保持稳定，一旦确定即不允许修改。</li></ul></li><li>元数据（metadata）控制模块行为<br>元数据是用来描述环境和数据的数据，通俗地说就是配置参数，参数可以从文件中获得，也可以从数据库中获得。典型例子是控制反转（Inversion of Control），使用最多的是Spring容器，在SpringContext配置文件中，可以通过修改配置文件，完成业务变化。</li><li>制定项目章程<br>项目章程指定了所有人员都必须遵守的约定，对项目来说，约定优于配置。</li><li>封装变化<br>对变化的封装包含两层含义：第一，将相同的变化封装到一个接口或抽象类中；第二，将不同的变化封装到不同的接口或抽象类中，不应该有两个不同的变化出现在同一个接口或抽象类中。找出预计有变化或不稳定的点，我们为这些变化点创建稳定的接口，准确地讲是封装可能发生的变化，23个设计模式都是从各个不同的角度对变化进行封装的。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;一个软件实体如类、模块和函数应该对扩展开放，对修改关闭。（Software entities like classes,modules and functions should be open for extension but closed for modifications.）&lt;/p&gt;
+&lt;h2 id=&quot;解释&quot;&gt;&lt;a href=&quot;#解释&quot; class=&quot;headerlink&quot; title=&quot;解释&quot;&gt;&lt;/a&gt;解释&lt;/h2&gt;&lt;p&gt;软件实体应该通过扩展来实现变化，而不是通过修改已有的代码来实现变化。&lt;br&gt;一个软件产品只要在生命期内，都会发生变化，我们应该在设计时尽量适应这些变化，以提高项目的稳定性和灵活性。开闭原则告诉我们应尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来完成变化，它是为软件实体的未来事件而制定的对现行开发设计进行约束的一个原则。&lt;br&gt;开闭原则对扩展开放，对修改关闭，并不意味着不做任何修改。低层模块的变更，必然要有高层模块进行适配，否则就是一个孤立无意义的代码片段。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Technology" scheme="https://moechaser.github.io/categories/Technology/"/>
+    
+      <category term="Design Pattern" scheme="https://moechaser.github.io/categories/Technology/Design-Pattern/"/>
+    
+    
+      <category term="Design Pattern" scheme="https://moechaser.github.io/tags/Design-Pattern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迪米特法则</title>
+    <link href="https://moechaser.github.io/Technology/Design-Pattern/2018/09/05/law-of-demeter/"/>
+    <id>https://moechaser.github.io/Technology/Design-Pattern/2018/09/05/law-of-demeter/</id>
+    <published>2018-09-05T14:24:07.000Z</published>
+    <updated>2018-09-05T15:24:23.753Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>一个对象应该对其他对象有最少的了解。又称最少知识原则（Least Knowledge Principle）。</p><a id="more"></a><h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>一个类应该对自己需要耦合或调用的类知道得最少，包含以下4层含义。</p><ol><li>只和朋友交流<br>迪米特法则还有一个英文解释是：Only talk to your immediate friends（只与直接的朋友通信。）两个对象之间的耦合就成为朋友关系。一个类只和朋友交流，不与陌生类交流。类与类之间的关系是建立在类间的，而不是方法间，因此一个方法尽量不引入一个类中不存在的对象。</li><li>朋友间也是有距离的<br>尽量不要对外公布太多的public方法和非静态的public变量，尽量内敛，多使用private、package-private、protected等访问权限。<br>一个类公开的public属性或方法越多，修改时涉及的面也就越大，变更引起的风险扩散也就越大。因此，为了保持朋友类间的距离，在设计时需要反复衡量：是否还可以再减少public方法和属性。</li><li>是自己的就是自己的<br>如果一个方法放在本类中，既不增加类间关系，也对本类不产生负面影响，那就放置在本类中。</li><li>谨慎使用Serializable<br>当通过序列化进行对象传输的时候，如果对象修改了属性的访问权限，而传输的另一方没有进行同步修改，则会报序列化失败。<br>（这一条属于迪米特法则的含义么？）</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>迪米特法则的核心观念就是类间解耦，弱耦合。但是弱耦合可能产生大量的中转或跳转类，导致系统的复杂性提高，维护难度增加。因此在设计时需要反复权衡，既做到让结构清晰，又做到高内聚低耦合。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;一个对象应该对其他对象有最少的了解。又称最少知识原则（Least Knowledge Principle）。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Technology" scheme="https://moechaser.github.io/categories/Technology/"/>
+    
+      <category term="Design Pattern" scheme="https://moechaser.github.io/categories/Technology/Design-Pattern/"/>
+    
+    
+      <category term="Design Pattern" scheme="https://moechaser.github.io/tags/Design-Pattern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>接口隔离原则</title>
+    <link href="https://moechaser.github.io/Technology/Design-Pattern/2018/08/28/interface-segregation-principle/"/>
+    <id>https://moechaser.github.io/Technology/Design-Pattern/2018/08/28/interface-segregation-principle/</id>
+    <published>2018-08-27T16:20:47.000Z</published>
+    <updated>2018-09-05T15:24:43.074Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ol><li>客户端不应该依赖它不需要的接口。(Clients should not be forced to depend upon interfaces that they don’t use.)</li><li>类间的依赖关系应该建立在最小的接口上。(The dependency of one class to another one should depend on the smallest possible interface.)</li></ol><a id="more"></a><h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>接口细化，功能纯洁，接口中的方法尽量少，不要建立臃肿庞大的接口。<br>接口隔离原则是对接口进行规范约束，其包含以下4层含义：</p><ol><li>接口要尽量小<br>这是接口隔离原则的核心定义，不出现臃肿的接口。根据接口隔离原则拆分接口时，首先必须满足单一职责原则。不能为了拆分接口破坏业务逻辑的整体性。</li><li>接口要高内聚<br>高内聚就是提高接口、类、模块的处理能力，减少对外的交互。具体到接口隔离原则就是，要求在接口中尽量少公布public方法，接口是对外的承诺，承诺越少对系统的开发越有利，变更的风险也就越少，同时也有利于降低成本。</li><li>定制服务<br>一个系统或系统内的模块之间必然会有耦合，有耦合就要有相互访问的接口。我们在做系统设计时需要考虑对系统之间或模块之间的接口采用定制服务，即为对应模块提供其仅需要的接口实现。</li><li>接口设计是有限度的<br>接口的设计粒度越小，系统越灵活。但是，灵活的同时也带来了结构的复杂化，开发难度增加，可维护性降低。接口设计的“度”取决于具体场景和经验。</li></ol><h2 id="与SRP的差异"><a href="#与SRP的差异" class="headerlink" title="与SRP的差异"></a>与SRP的差异</h2><p>接口隔离原则与单一职责原则的审视角度不同。单一职责原则要求接口职责单一，注重业务逻辑上的职能。接口隔离原则要求接口方法尽量少且功能纯粹。</p><ul><li style="list-style: none"><input type="checkbox"> 此处没有理解清楚，需要补充。</li></ul><h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ul><li>一个接口只服务于一个子模块或业务逻辑</li><li>压缩接口中的public方法</li><li>已经被污染了的接口，尽量去修改，若变更的风险较大，则采用适配器模式进行转化处理</li><li>了解环境，拒绝盲从。切忌照抄，要根据实际业务逻辑设计接口。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;客户端不应该依赖它不需要的接口。(Clients should not be forced to depend upon interfaces that they don’t use.)&lt;/li&gt;
+&lt;li&gt;类间的依赖关系应该建立在最小的接口上。(The dependency of one class to another one should depend on the smallest possible interface.)&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Technology" scheme="https://moechaser.github.io/categories/Technology/"/>
+    
+      <category term="Design Pattern" scheme="https://moechaser.github.io/categories/Technology/Design-Pattern/"/>
+    
+    
+      <category term="Design Pattern" scheme="https://moechaser.github.io/tags/Design-Pattern/"/>
+    
+  </entry>
   
   <entry>
     <title>依赖倒置原则</title>
